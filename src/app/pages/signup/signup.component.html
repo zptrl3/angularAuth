@@ -1,0 +1,92 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-black-bis">Sign Up</h3>
+        <p class="subtitle has-text-black">Create Your Museum Account</p>
+        <div class="box">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" formControlName="firstname" type="text"
+                       [ngClass]="{ 'is-invalid': submitted && f.firstname.errors}"
+                        placeholder="Firstname">
+                <div *ngIf="submitted && f.firstname.errors">
+                  <div *ngIf="f.firstname.errors.required">
+                    <p class="help is-danger">Firstname is required</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" formControlName="lastname" type="text"
+                       [ngClass]="{ 'is-invalid': submitted && f.lastname.errors}"
+                       placeholder="Lastname">
+                <div *ngIf="submitted && f.lastname.errors">
+                  <div *ngIf="f.lastname.errors.required">
+                    <p class="help is-danger">Lastname is required</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" formControlName="username" type="text"
+                       [ngClass]="{ 'is-invalid': submitted && f.username.errors}"
+                       placeholder="Username">
+                <div *ngIf="submitted && f.username.errors">
+                  <div *ngIf="f.username.errors.required">
+                    <p class="help is-danger">Username is required</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" formControlName="email" type="email"
+                       [ngClass]="{ 'is-invalid': submitted && f.email.errors}"
+                       placeholder="Email">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">
+                    <p class="help is-danger">Email is required</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" formControlName="password" type="password"
+                       [ngClass]="{ 'is-invalid': submitted && f.password.errors}"
+                       placeholder="Password">
+                <div *ngIf="submitted && f.password.errors">
+                  <div *ngIf="f.password.errors.required">
+                    <p class="help is-danger">Password is required</p>
+                  </div>
+
+                  <div *ngIf="f.password.errors.minLength">
+                    <p class="help is-danger">Password must be at least 6 characters</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <p class="field is-size-7 has-text-black">
+              By signing up, you agree to our <a class="has-text-link">Terms of Use</a> and <a class="has-text-link">Privacy Policy</a>.
+            </p>
+
+            <button [disabled]="loading" class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

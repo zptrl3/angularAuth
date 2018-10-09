@@ -1,0 +1,130 @@
+<nav class="navbar">
+  <div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <img src="../../../assets/company-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="75">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="#">
+          Categories
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="#">
+            Museums
+          </a>
+          <a class="navbar-item" href="#">
+            Outdoor Places
+          </a>
+          <a class="navbar-item" href="#">
+            Sights & Landmarks
+          </a>
+          <a class="navbar-item" href="#">
+            Nature & Parks
+          </a>
+          <a class="navbar-item" href="#">
+            Sacred & Religious Sites
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a class="navbar-item">
+        <div class="field has-addons">
+          <div class="control is-expended">
+            <input class="input is-medium is-expended" id="navbar-search-input" type="text" placeholder="Search a guide">
+          </div>
+          <div class="control">
+            <a class="button is-medium" href="">
+              <span class="icon is-right">
+                <i class="fas fa-search fa-lg"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </a>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+      <div class="dropdown is-hoverable is-right">
+          <div class="dropdown-toggle">
+            <button class="button is-white" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span>Guide Online</span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <p class="dropdown-item">Turn what you know into an opportunity and reach millions around the world.</p>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item has-text-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-item">
+        <div *ngIf="!isLoggedIn()" class="field is-grouped">
+          <p class="control">
+            <a class="button" routerLink="/login">
+              <span>
+                Login
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-primary" routerLink="/signup">
+              <span>Sign Up</span>
+            </a>
+          </p>
+        </div>
+
+        <div *ngIf="isLoggedIn()" class="dropdown is-hoverable is-right">
+          <div class="dropdown-toggle">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span>Profile</span>
+              <span class="icon is-medium">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <a class="dropdown-item">Account</a>
+                <a class="dropdown-item">History</a>
+                <a class="dropdown-item">Referral Program</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item">Mobile & Offline apps</a>
+                <a class="dropdown-item">Resource Center</a>
+                <a class="dropdown-item">How-to-videos</a>
+                <a class="dropdown-item">Support</a>
+                <a class="dropdown-item">Contact Us</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" (click)="logout()">
+                  <span class="icon is-small">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </span>
+                  <span>Sign out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>

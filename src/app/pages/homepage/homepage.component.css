@@ -1,0 +1,9 @@
+.has-bg-img {
+    background: url("/src/assets/container-img.jpg")center center;
+    background-size:cover;
+  }
+  
+  .title {
+    font-size: 48px;
+  }
+  
